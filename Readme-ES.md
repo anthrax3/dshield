@@ -3,6 +3,197 @@
 
 Este es un conjunto de scripts para configurar una Raspberry Pi como sensor DShield.
 
+
+
+
+# Nodo Básico
+En este apartado se encuentra la información para la creación de un nodo comunitario básico con una tarjeta de desarrollo Raspberry Pi. Sólo hay que seguir los pasos y tendrás un nodo para usar en tu comunidad.
+
+
+***
+
+
+## :zero: Requerimientos
+
+
+***
+
+
+:ballot_box_with_check: Computadora con acceso a Internet.
+
+
+:ballot_box_with_check: Un switch de 4 puertos.
+
+
+:ballot_box_with_check:Tarjeta de desarrollo Raspberry Pi 3.
+
+
+:ballot_box_with_check:Tarjeta de Memoria Micro SD de 32Gb.
+
+
+:ballot_box_with_check: Adaptador para leer la tarjeta Micro SD.
+
+
+
+
+***
+
+
+## :one: Preparación de la tarjeta Micro SD
+
+
+***
+
+
+### 1.1. Descarga del archivo del Sistema Operativo
+Lo primero es descargar la imagen de Raspbian versión Lite desde el [sitio oficial](https://www.raspberrypi.org/downloads/raspbian/ "Descarga Raspbian desde el Sitio Oficial"), puedes descargar la versión _**[torrent](https://downloads.raspberrypi.org/raspbian_lite_latest.torrent "Descarga Raspbian Lite en por medio de torrent")**_ o en formato _**[zip](https://downloads.raspberrypi.org/raspbian_lite_latest "Descarga Raspbian Lite en formato zip")**_. 
+
+
+
+### 1.2. Verificación del archivo
+Es importante verificar que se ha descargado el archivo correctamente, comparando la cadena del archivo en la página, con la cadena que se genera en con el siguiente comando:
+>```bash
+>sha256sum 2017-11-29-raspbian-stretch-lite.zip
+>```
+
+y debe dar por resultado una cadena igual a.
+>```console
+>e942b70072f2e83c446b9de6f202eb8f9692c06e7d92c343361340cc016e0c9f  2017-11-29-raspbian-stretch-lite.zip
+>```
+
+### 1.3. Descomprime el archivo de  la imagen del sistema operativo 
+>```bash
+>unzip 2017-11-29-raspbian-stretch-lite.zip 
+>```
+
+y se obtiene de resultado
+>```console
+>Archive:  2017-11-29-raspbian-stretch-lite.zip
+>  inflating: 2017-11-29-raspbian-stretch-lite.img  
+>```
+
+### 1.4. Copia de imagen a tarjeta de memoria Micro SD
+1.4.1. Cambia de usuario a **`root`**
+>```bash
+>sudo su
+>```
+
+1.4.2. Realiza una copia binaria utilizando el comando **dd**
+>```bash
+>dd if=2017-11-29-raspbian-stretch-lite.img  of=/dev/sdX bs=512k conv=fsync 
+>```
+
+La unidad **`sdX`** depende de tu equipo en cual reconoce la tarjeta de memoria Micro SD.
+
+
+Al finalizar mostrará el siguiente mensaje
+>```console
+>3544+0 registros leídos
+>3544+0 registros escritos
+>1858076672 bytes (1.9 GB, 1.7 GiB) copied, 91.9325 s, 20.2 MB/s
+>```
+
+
+
+***
+
+
+## :two: Preparación de la tarjeta Raspberry Pi 3
+
+
+***
+
+
+- [x] Conecta la tarjeta Micro SD a la Raspberry Pi 3.
+- [x] Conecta la Raspberry Pi a una pantalla utilizando un cable HDMI.
+- [x] Conectale un teclado a uno de los puertos USB  de la Raspberry Pi.
+- [x] Conecta un cable de alimentación al puerto micro USB.
+- [x] Conecta un cable de red de la Raspberry Pi al puerto del switch o ruteador.
+
+
+
+***
+
+
+### 2.1. Inicio por primera vez
+La primera vez que arranca la tarjeta de desarrollo Raspberry Pi 3 con la tarjeta de memoria con la imagen cargada, se configurará en forma automática para utilizar todo el espacio disponible en la tarjeta de memoria.
+
+2.1.1. Una vez que se ha reiniciado el sistema, ingresamos con el usuario `pi` y la contraseña `raspbian`
+>```bash
+>Raspbian GNU/Linux 9 raspberrypi tty1
+>raspberry login: pi
+>Password: raspberry
+>```
+
+Y nos muestra el siguiente mensaje.
+>```console
+>Linux raspberrypi 4.9.59-v7+ #1047 SMP Sun Oct 29 12;19;23 GMT armv71
+>
+>The programs included with the Debian GNU/Linux system are free software;
+>the exact distribution terms of each program are described in the 
+>individual files in /usr/share/doc/*copyright.
+>
+>Debian GNU/Linux comes with ABSOLUTELY NO WARRYTY, to the extent
+>permited by applicable law.
+>pi@raspberrypi:~ $_
+>```
+
+2.1.2. Cambiamos de usuario a `root` para  configurar la tarjeta de desarrollo Raspberry Pi 3.
+>```bash
+>sudo su
+>```
+
+
+***
+
+
+### 2.2. Actualización de los paquetes
+Ya que la imagen que se descarga e instala en la tarjeta micro sd puede ser que contenga algunos paquetes que han sido actualizados corrigiendo algún fallo de seguridad, o simplemente mejorando alguna caracteríztica, para buscar y actulizar a la última versión introducimos los siguientes comandos.
+>```bash
+>apt update
+>apt -y dist-upgrade
+>```
+
+### 2.3. Actualizamos el firmware 
+>```bash
+>rpi-update
+>```
+
+### 2.4. Configuración de la raspberry pi
+Mediante la herramienta `raspi-config`, cambiamos la contraseña por default y configuramos otros detalles como el nombre del host, la localización, así como activar el servicio SSH entre otros.
+>```bash
+>raspi-config
+>```
+
+Una vez que se ha terminado el proceso de configuracin, reiniciamos la tarjeta de desarrollo raspberry pi.
+>```bash
+>reboot
+>```
+
+
+***
+
+
+## :three: Instalación de paquetes
+
+
+***
+
+
+### 3.1. Ingresamos a la consola 
+Una vez que se ha reiniciado el sistema, ingresamos con el usuario `pi` y la contraseña que hayamos configurado en el paso anterior, para que una vez que hayamos ingresado al sistema cambiarnos de usuario a `root`.
+>```bash
+>sudo su
+>```
+
+
+
+
+
+
+
+
+
 ## Requisitos para usar el procedimiento de instalación automatizada:
 > :ballot_box_with_check: Un dispositivo Raspberry Pi 2 o 3 dedicado a ser Sensor.
 >
