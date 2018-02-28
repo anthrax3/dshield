@@ -180,26 +180,25 @@ Una vez que se ha reiniciado el sistema, ingresamos con el usuario `pi` y la con
 >sudo su
 >```
 
+### 3.2. Instalación de Herramientas
+3.2.1. Editor de textos Vim
+>```bash
+>apt -y install vim
+>```
 
+3.2.2. Software de control de versiones
+>```bash
+>apt -y install git
+>```
 
+3.2.3. Descarga el código de DShield
+>```bash
+>git clone https://github.com/DShield-ISC/dshield.git
+>cd dshield/bin
+>./install.sh
+```
 
-
-    if GIT isn't already installed (will be the case e.g. when using the lite distro): install GIT
-
-sudo apt-get -y install git
-
-    make install directory and get GIT repository
-
-mkdir install
-cd install
-git clone https://github.com/DShield-ISC/dshield.git
-
-    run the installation script
-
-cd dshield/bin
-sudo ./install.sh
-
-    if curious watch the debug log file in parallel to the installation: connect with an additional ssh session to the system and run (name of the log file will be printed out by the installation script):
+if curious watch the debug log file in parallel to the installation: connect with an additional ssh session to the system and run (name of the log file will be printed out by the installation script):
 
 sudo tail -f LOGFILE
 
