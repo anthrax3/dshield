@@ -4,12 +4,6 @@
 Este es un conjunto de scripts para configurar una Raspberry Pi como sensor DShield.
 
 
-
-
-# Nodo Básico
-En este apartado se encuentra la información para la creación de un nodo comunitario básico con una tarjeta de desarrollo Raspberry Pi. Sólo hay que seguir los pasos y tendrás un nodo para usar en tu comunidad.
-
-
 ***
 
 
