@@ -5,47 +5,35 @@ Este es un conjunto de scripts para configurar una Raspberry Pi como sensor DShi
 
 ## Requisitos para usar el procedimiento de instalación automatizada:
 > :ballot_box_with_check: Un dispositivo Raspberry Pi 2 o 3 dedicado a ser Sensor.
-
+>
 > :ballot_box_with_check: Tarjeta de memoria con sistema operativo Raspbian.
-
+>
 > :ballot_box_with_check: fácil instalación / configuración (y por lo tanto no mucho configurable)
-
+>
 > :ballot_box_with_check: desechable (cuando algo se rompe (por ejemplo, durante la actualización): vuelva a instalar desde cero)
-
+>
 > :ballot_box_with_check: minimizar la complejidad y la sobrecarga (por ejemplo, no hay virtualización como docker)
-
-> :ballot_box_with_check: soporte solo para IPv4 (para la red interna)
-
-> :ballot_box_with_check: una única interfaz (por ejemplo, eth0)
+>
+> :ballot_box_with_check: Soporte solo para IPv4 (para la red interna)
+>
+> :ballot_box_with_check: Una única interfaz (por ejemplo, eth0)
 
 - easy installation / configuration (and therefor not that much configurable)
 - disposable (when something breaks (e.g. during upgrade): re-install from scratch)
 - minimize complexity and overhead (e.g. no virtualization like docker)
-- support for IPv4 only (for the internal net)
-- one interface only (e.g. eth0)
-
-The current version is only tested on Raspbian, not on other distros, sorry.
-If there is the need for other distros, "someone" has to check and maintain the installation script.
 
 
-
-
-La versión actual solo se prueba en Raspbian, no en otras distros, lo siento. Si existe la necesidad de otras distribuciones, "alguien" debe verificar y mantener el script de instalación.
-
-Objetivos de diseño actuales y requisitos previos para usar el procedimiento de instalación automatizada:
-
-     uso de un dispositivo dedicado (Raspberry Pi)
-     SO raspbian actual
-
-La versión actual solo se prueba en Raspbian, no en otras distros, lo siento. Si existe la necesidad de otras distribuciones, "alguien" debe verificar y mantener el script de instalación.
-
-
+La versión actual solo se ha probado en Raspbian, no en otras distros, lo siento. Si existe la necesidad de otras distribuciones, "alguien" debe verificar y mantener el script de instalación.
 
 
 ***
 
 
-## Installation
+## Instalación
+
+
+***
+
 
 In order to use the installation script on the Raspberry Pi, you will need to first prepare it.
 
