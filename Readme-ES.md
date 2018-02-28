@@ -13,13 +13,13 @@ Este es un conjunto de scripts para configurar una Raspberry Pi como sensor DShi
 ***
 
 
+:ballot_box_with_check:Tarjeta de Raspberry Pi 2 o 3.
+
+
 :ballot_box_with_check: Computadora con acceso a Internet.
 
 
 :ballot_box_with_check: Un switch de 4 puertos.
-
-
-:ballot_box_with_check:Tarjeta de desarrollo Raspberry Pi 3.
 
 
 :ballot_box_with_check:Tarjeta de Memoria Micro SD de 32Gb.
