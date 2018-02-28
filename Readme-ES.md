@@ -4,13 +4,13 @@
 Este es un conjunto de scripts para configurar una Raspberry Pi como sensor DShield.
 
 ## Requisitos para usar el procedimiento de instalación automatizada:
->+ :ballot_box_with_check: Un dispositivo Raspberry Pi 2 o 3 dedicado a ser Sensor.
->+ :ballot_box_with_check: Tarjeta de memoria con sistema operativo Raspbian.
->+ :ballot_box_with_check: fácil instalación / configuración (y por lo tanto no mucho configurable)
->+ :ballot_box_with_check: desechable (cuando algo se rompe (por ejemplo, durante la actualización): vuelva a instalar desde cero)
->+ :ballot_box_with_check: minimizar la complejidad y la sobrecarga (por ejemplo, no hay virtualización como docker)
->+ :ballot_box_with_check: soporte solo para IPv4 (para la red interna)
->+ :ballot_box_with_check: una única interfaz (por ejemplo, eth0)
+>- :ballot_box_with_check: Un dispositivo Raspberry Pi 2 o 3 dedicado a ser Sensor.
+>-:ballot_box_with_check: Tarjeta de memoria con sistema operativo Raspbian.
+>-:ballot_box_with_check: fácil instalación / configuración (y por lo tanto no mucho configurable)
+>- :ballot_box_with_check: desechable (cuando algo se rompe (por ejemplo, durante la actualización): vuelva a instalar desde cero)
+>-:ballot_box_with_check: minimizar la complejidad y la sobrecarga (por ejemplo, no hay virtualización como docker)
+>- :ballot_box_with_check: soporte solo para IPv4 (para la red interna)
+>-:ballot_box_with_check: una única interfaz (por ejemplo, eth0)
 
 - easy installation / configuration (and therefor not that much configurable)
 - disposable (when something breaks (e.g. during upgrade): re-install from scratch)
